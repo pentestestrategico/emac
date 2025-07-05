@@ -4,20 +4,18 @@
 
 /* Contêiner principal visível do carrossel */
 .carrocel-container {
-  width: 200%;                          /* Ocupa toda a largura disponível */
-  max-width: 1110px;                     /* Limite máximo para manter a estética */
-  margin: 5px auto 0 auto;                    /* Apenas 4px de espaço do topo, ajuste se quiser ainda menor */
-  overflow: hidden;                     /* Esconde imagens que ultrapassam a área */
-  border-radius: 20px;                  /* Bordas arredondadas */
-  background: linear-gradient(135deg, #bde0fe, #caffbf); /* Fundo suave com degradê */
-  padding: 22px 60px;                       /* Espaçamento interno */
-  position: relative;                   /* Necessário para posicionar elementos internos */
-
-  /* Sombra com cores do espectro do autismo */
+  width: 100%;                    /* Ocupa toda a largura disponível */
+  max-width: 1200px;              /* Novo limite máximo, mais largo */
+  margin: 5px auto 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #bde0fe, #caffbf);
+  padding: 22px 60px;
+  position: relative;
   box-shadow:
-    0 8px 32px 0 rgba(58, 163, 229, 0.18),   /* Azul claro */
-    0 2px 8px 0 rgba(252, 195, 44, 0.10),    /* Amarelo */
-    0 0 0 6px #FCC32C22;                    /* Borda amarela translúcida */
+    0 8px 32px 0 rgba(58, 163, 229, 0.18),
+    0 2px 8px 0 rgba(252, 195, 44, 0.10),
+    0 0 0 6px #FCC32C22;
 }
 
 /* Faixa horizontal que desliza as imagens */
@@ -56,14 +54,9 @@
 
 /* Emojis decorativos abaixo do carrossel */
 .carrocel-container::before {
-  content: "💙💛💚💜";                     /* Emojis do espectro */
-  position: absolute;                  /* Posicionamento relativo ao container */
-  bottom: -25px;                       /* Abaixo do carrossel */
-  left: 50%;                           /* Centralizado horizontalmente */
-  transform: translateX(-50%);         /* Corrige o deslocamento */
-  font-size: 20px;                     /* Tamanho dos emojis */
+  content: ""; /* Removido os emojis 💙💛💚💜 */
+  /* As demais propriedades podem ser removidas ou mantidas para compatibilidade */
 }
-
 
 /* ================================
    ESTILOS DO MODAL DE IMAGEM

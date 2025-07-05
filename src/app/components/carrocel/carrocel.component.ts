@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-carrocel',
-  imports: [RouterModule],
   templateUrl: './carrocel.component.html',
-  styleUrl: './carrocel.component.css'
+  styleUrls: ['./carrocel.component.css'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class CarrocelComponent {
   modalImg: string | null = null;

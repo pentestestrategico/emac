@@ -1,0 +1,26 @@
+/* Adicione no footer.component.css */
+.footer {
+  width: 100%;
+  background: linear-gradient(90deg, #3AA3E5 0%, #FCC32C 100%);
+  color: #fff;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 4px;
+  font-weight: 500;
+}
+
+
