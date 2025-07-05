@@ -1,7 +1,6 @@
-
 <div class="card-grid">
   <div class="card" *ngFor="let f of fotos">
-    <img [src]="f.imagem" width="100%">
+    <img [src]="f.imagem" class="card-image" [alt]="f.texto" />
     <h3>{{f.texto}}</h3>
 
 
