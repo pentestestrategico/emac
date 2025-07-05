@@ -1,1 +1,19 @@
-<p>contato works!</p>
+<form #contatoForm="ngForm" (ngSubmit)="enviarWhatsApp()" autocomplete="off">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input id="nome" name="nome" type="text" class="form-control" required maxlength="60" pattern="^[a-zA-ZÀ-ÿ ']+$" [(ngModel)]="nome">
+  </div>
+  <div class="form-group">
+    <label for="telefone">Telefone:</label>
+    <input id="telefone" name="telefone" type="tel" class="form-control" required maxlength="20" pattern="^\+?\d{10,15}$" [(ngModel)]="telefone">
+  </div>
+  <div class="form-group">
+    <label for="email">E-mail:</label>
+    <input id="email" name="email" type="email" class="form-control" required maxlength="80" [(ngModel)]="email">
+  </div>
+  <div class="form-group">
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" class="form-control" rows="4" required maxlength="500" [(ngModel)]="mensagem"></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Enviar pelo WhatsApp</button>
+</form>
