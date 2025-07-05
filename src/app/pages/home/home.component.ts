@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CarrocelComponent } from "../../components/carrocel/carrocel.component";
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [CarrocelComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -13,7 +13,7 @@ Cores do logo/autismo
     border-radius: 28px;
     box-shadow: 0 8px 32px 0 rgba(58,163,229,0.18), 0 2px 8px 0 rgba(252,195,44,0.10);
     height: 120px;
-    margin: 36px 0;
+    margin: 0; /* margem superior zero */
     backdrop-filter: blur(12px) saturate(140%);
     border: 3px solid #3AA3E5;
     outline: 2.5px solid #FCC32C;
@@ -65,33 +65,36 @@ Cores do logo/autismo
     overflow: hidden;
 }
 
-/* Cores alternadas para cada link */
-.navbar a:nth-child(1) { color: #FCC32C; }
-.navbar a:nth-child(2) { color: #47BF59; }
-.navbar a:nth-child(3) { color: #FC4446; }
-.navbar a:nth-child(4) { color: #3AA3E5; }
-.navbar a:nth-child(5) { color: #FCC32C; }
-.navbar a:nth-child(6) { color: #47BF59; }
 
-.navbar a::before {
+
+/* Cores específicas para cada link do menu */
+.nav-links a:nth-child(1) { color: #3AA3E5; }   /* Home - azul */
+.nav-links a:nth-child(2) { color: #FC4446; }   /* Espaços - vermelho */
+.nav-links a:nth-child(3) { color: #47BF59; }   /* Serviços - verde */
+.nav-links a:nth-child(4) { color: #FCC32C; }   /* Sobre - amarelo */
+.nav-links a:nth-child(5) { color: #3AA3E5; }   /* Equipe - azul */
+.nav-links a:nth-child(6) { color: #FC4446; }   /* Fale conosco - vermelho */
+
+/* Quebra-cabeças intercalados nas mesmas cores */
+.nav-links a::before {
     content: '🧩';
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2em;
-    opacity: 0.7;
+    opacity: 0.85;
     transition: color 0.3s;
-    /* Alterna as cores do quebra-cabeça */
 }
-.navbar a:nth-child(1)::before { color: #FCC32C; }
-.navbar a:nth-child(2)::before { color: #47BF59; }
-.navbar a:nth-child(3)::before { color: #FC4446; }
-.navbar a:nth-child(4)::before { color: #3AA3E5; }
-.navbar a:nth-child(5)::before { color: #FCC32C; }
-.navbar a:nth-child(6)::before { color: #47BF59; }
+.nav-links a:nth-child(1)::before { color: #3AA3E5; }
+.nav-links a:nth-child(2)::before { color: #FC4446; }
+.nav-links a:nth-child(3)::before { color: #47BF59; }
+.nav-links a:nth-child(4)::before { color: #FCC32C; }
+.nav-links a:nth-child(5)::before { color: #3AA3E5; }
+.nav-links a:nth-child(6)::before { color: #FC4446; }
 
-.navbar a::after {
+/* Efeito hover e sublinhado animado */
+.nav-links a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -104,16 +107,15 @@ Cores do logo/autismo
     z-index: 2;
 }
 
-.navbar a:hover {
+.nav-links a:hover {
     color: #fff;
     text-shadow: 0 2px 12px #3AA3E5, 0 1px 2px #FC4446;
 }
 
-.navbar a:hover::after {
+.nav-links a:hover::after {
     width: 100%;
 }
 
-.navbar a.active {
-    color: #47BF59;
-    text-shadow: 0 2px 8px #FCC32C;
+.nav-links > a:nth-child(1) {
+    color: #3AA3E5 !important;
 }
