@@ -71,7 +71,7 @@ Cores do logo/autismo
 .nav-links a:nth-child(1) { color: #3AA3E5; }   /* Home - azul */
 .nav-links a:nth-child(2) { color: #FC4446; }   /* Espaços - vermelho */
 .nav-links a:nth-child(3) { color: #47BF59; }   /* Serviços - verde */
-.nav-links a:nth-child(4) { color: #FCC32C; }   /* Sobre - amarelo */
+.nav-links a:nth-child(4) { color: yellow; }   /* Sobre - amarelo */
 .nav-links a:nth-child(5) { color: #3AA3E5; }   /* Equipe - azul */
 .nav-links a:nth-child(6) { color: #FC4446; }   /* Fale conosco - vermelho */
 
