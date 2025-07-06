@@ -1,1 +1,17 @@
-<p>servicos works!</p>
+<!-- servicos.component.html -->
+<div class="servicos-container">
+  <h2>Nossos Serviços</h2>
+  <p>
+    Conheça como nossos serviços contribuem para o desenvolvimento de pessoas com TEA:
+  </p>
+
+  <div class="servicos-grid">
+    <div *ngFor="let servico of servicos" class="card-servico" [ngStyle]="{ 'border-left-color': servico.cor }">
+      <div class="icone-servico">
+        <i [class]="servico.icone"></i>
+      </div>
+      <h3>{{ servico.titulo }}</h3>
+      <p>{{ servico.descricao }}</p>
+    </div>
+  </div>
+</div>

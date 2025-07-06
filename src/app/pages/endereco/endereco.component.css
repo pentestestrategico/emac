@@ -1,0 +1,28 @@
+.endereco-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px 0 rgba(58,163,229,0.10);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.endereco-container h2 {
+  color: #3AA3E5;
+  margin-bottom: 12px;
+}
+
+.endereco-container p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.mapa-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px #3AA3E533;
+}

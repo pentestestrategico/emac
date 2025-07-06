@@ -5,9 +5,7 @@ import { ContatoComponent } from './pages/contato/contato.component';
 import { EspacoComponent } from './pages/espaco/espaco.component';
 import { ServicosComponent } from './pages/servicos/servicos.component';
 import { EquipeComponent } from './pages/equipe/equipe.component';
-
-
-
+import { EnderecoComponent } from './pages/endereco/endereco.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
@@ -16,5 +14,6 @@ export const routes: Routes = [
     {path:'espaco',component:EspacoComponent},
     {path:'servicos',component:ServicosComponent},
     {path:'equipe',component:EquipeComponent},
+    {path:'endereco',component:EnderecoComponent}
 
 ];

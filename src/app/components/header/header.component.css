@@ -34,12 +34,12 @@ Cores do logo/autismo
 }
 
 .logo {
-    height: 84px;
+    height: 230px;
     margin-right: 48px;
+    margin-top: -30px; /* ajuste este valor conforme desejar */
     filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18));
     border-radius: 16px;
-    background: rgba(255,255,255,0.13);
-    padding: 7px;
+    padding: 0px;
     z-index: 1;
 }
 
@@ -118,4 +118,57 @@ Cores do logo/autismo
 
 .nav-links > a:nth-child(1) {
     color: #3AA3E5 !important;
+}
+
+/* RESPONSIVIDADE HEADER */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 10vw 18px 10vw;
+    height: auto;
+  }
+
+  .logo {
+    height: 120px;
+    margin-right: 0;
+    margin-top: -18px;
+    margin-bottom: 10px;
+    align-self: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    margin-left: 0;
+    align-items: flex-start;
+  }
+
+  .nav-links a {
+    padding-left: 32px;
+    font-size: 1.08rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px 2vw;
+    border-radius: 16px;
+  }
+
+  .logo {
+    height: 80px;
+    margin-top: -10px;
+    margin-bottom: 8px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding-left: 28px;
+  }
 }
