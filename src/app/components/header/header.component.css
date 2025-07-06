@@ -7,7 +7,7 @@ Cores do logo/autismo
 */
 .navbar {
     background: rgba(255,255,255,0.18);
-    padding: 22px 60px;
+    padding: 22px 40px;
     display: flex;
     align-items: center;
     border-radius: 28px;
@@ -34,9 +34,9 @@ Cores do logo/autismo
 }
 
 .logo {
-    height: 230px;
-    margin-right: 48px;
-    margin-top: -30px; /* ajuste este valor conforme desejar */
+    height: 180px;
+    margin-right: 32px;
+    margin-top: -18px; /* ajuste este valor conforme desejar */
     filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18));
     border-radius: 16px;
     padding: 0px;
@@ -45,7 +45,7 @@ Cores do logo/autismo
 
 .nav-links {
     display: flex;
-    gap: 36px;
+    gap: 28px;
     align-items: center;
     margin-left: auto;
     z-index: 1;
@@ -56,42 +56,41 @@ Cores do logo/autismo
     /* color: #fff; */
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.18rem;
-    letter-spacing: 1.2px;
+    font-size: 1.12rem;
+    letter-spacing: 1.1px;
     position: relative;
-    padding: 10px 0 10px 36px;
+    padding: 8px 0 8px 0; /* Reduza o padding à esquerda */
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Espaço entre ícone e texto */
     transition: color 0.3s, text-shadow 0.3s;
     z-index: 1;
     overflow: hidden;
 }
 
+/* Ajuste o alinhamento do ícone do quebra-cabeça */
+.nav-links a i {
+    font-size: 1.15em;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* Cores específicas para cada ícone */
+.nav-links a:nth-child(1) i { color: #FC4446; }
+.nav-links a:nth-child(2) i { color: #FCC32C; }
+.nav-links a:nth-child(3) i { color: #3AA3E5; }
+.nav-links a:nth-child(4) i { color: #47BF59; }
+.nav-links a:nth-child(5) i { color: #FC4446; }
+.nav-links a:nth-child(6) i { color: #FCC32C; }
 
 
 /* Cores específicas para cada link do menu */
 .nav-links a:nth-child(1) { color: #3AA3E5; }   /* Home - azul */
 .nav-links a:nth-child(2) { color: #FC4446; }   /* Espaços - vermelho */
 .nav-links a:nth-child(3) { color: #47BF59; }   /* Serviços - verde */
-.nav-links a:nth-child(4) { color: yellow; }   /* Sobre - amarelo */
+.nav-links a:nth-child(4) { color: #FCC32C; }   /* Sobre - amarelo */
 .nav-links a:nth-child(5) { color: #3AA3E5; }   /* Equipe - azul */
 .nav-links a:nth-child(6) { color: #FC4446; }   /* Fale conosco - vermelho */
-
-/* Quebra-cabeças intercalados nas mesmas cores */
-.nav-links a::before {
-    content: '🧩';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    opacity: 0.85;
-    transition: color 0.3s;
-}
-.nav-links a:nth-child(1)::before { color: #3AA3E5; }
-.nav-links a:nth-child(2)::before { color: #FC4446; }
-.nav-links a:nth-child(3)::before { color: #47BF59; }
-.nav-links a:nth-child(4)::before { color: #FCC32C; }
-.nav-links a:nth-child(5)::before { color: #3AA3E5; }
-.nav-links a:nth-child(6)::before { color: #FC4446; }
 
 /* Efeito hover e sublinhado animado */
 .nav-links a::after {
@@ -125,50 +124,52 @@ Cores do logo/autismo
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 18px 10vw 18px 10vw;
+    padding: 16px 4vw;
     height: auto;
   }
 
   .logo {
-    height: 120px;
+    height: 90px;
     margin-right: 0;
-    margin-top: -18px;
+    margin-top: -10px;
     margin-bottom: 10px;
     align-self: center;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
     width: 100%;
     margin-left: 0;
     align-items: flex-start;
   }
 
   .nav-links a {
-    padding-left: 32px;
-    font-size: 1.08rem;
+    font-size: 1.04rem;
+    padding: 8px 0 8px 0;
+    gap: 7px;
   }
 }
 
 @media (max-width: 600px) {
   .navbar {
-    padding: 10px 2vw;
+    padding: 8px 2vw;
     border-radius: 16px;
   }
 
   .logo {
-    height: 80px;
-    margin-top: -10px;
-    margin-bottom: 8px;
+    height: 60px;
+    margin-top: -6px;
+    margin-bottom: 6px;
   }
 
   .nav-links {
-    gap: 10px;
+    gap: 7px;
   }
 
   .nav-links a {
-    font-size: 1rem;
-    padding-left: 28px;
+    font-size: 0.98rem;
+    padding: 7px 0 7px 0;
+    gap: 6px;
   }
 }
