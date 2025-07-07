@@ -1,60 +1,64 @@
-# Emac
+Aqui está um exemplo de README.md estiloso e informativo para o seu projeto. Adaptei para destacar as tecnologias usadas e tornar a apresentação moderna e atraente:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+---
 
-## Development server
+# EMAC 🌐
 
-To start a local development server, run:
+> Projeto para o site EMAC
 
-```bash
-ng serve
-```
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ✨ Sobre o Projeto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+O EMAC é um projeto desenvolvido para oferecer uma experiência moderna, responsiva e eficiente no acesso ao conteúdo do site. Combinando as melhores práticas de desenvolvimento web, este repositório foca em performance, acessibilidade e design atraente.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Tecnologias Utilizadas
 
-```bash
-ng generate --help
-```
+- **TypeScript**  
+  Linguagem que adiciona tipagem estática ao JavaScript, tornando o código mais seguro e robusto.
 
-## Building
+- **CSS3**  
+  Usado para estilização avançada, garantindo responsividade e visual moderno.
 
-To build the project run:
+- **HTML5**  
+  Estrutura semântica da aplicação, facilitando acessibilidade e SEO.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📦 Como rodar o projeto
 
 ```bash
-ng test
+# Clone este repositório
+git clone https://github.com/pentestestrategico/emac.git
+
+# Acesse a pasta do projeto
+cd emac
+
+# Instale as dependências (ajuste o comando conforme o gerenciador de pacotes)
+npm install
+
+# Inicie o projeto
+npm start
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 💡 Contribuição
 
-```bash
-ng e2e
-```
+Sinta-se à vontade para enviar PRs e sugestões! Toda contribuição é bem-vinda para tornar o EMAC ainda melhor.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📄 Licença
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# emac
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+Se quiser personalizar ainda mais, me diga se há frameworks, bibliotecas ou recursos extras usados no projeto (por exemplo, React, Next.js, Bootstrap, etc.)!
