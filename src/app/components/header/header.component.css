@@ -5,87 +5,122 @@ Cores do logo/autismo
 #FC4446 (vermelho)
 #3AA3E5 (azul)
 */
+
+/* 
+ * FUNÇÃO: Container principal do navbar
+ * PROPÓSITO: Define o layout, aparência e posicionamento do header
+ * CARACTERÍSTICAS: Fundo translúcido, bordas arredondadas, sombras, gradientes
+ */
 .navbar {
-    background: rgba(255,255,255,0.18);
-    padding: 22px 40px;
-    display: flex;
-    align-items: center;
-    border-radius: 28px;
-    box-shadow: 0 8px 32px 0 rgba(58,163,229,0.18), 0 2px 8px 0 rgba(252,195,44,0.10);
-    height: 120px;
-    margin: 5px; /* margem superior zero */
-    backdrop-filter: blur(12px) saturate(140%);
-    border: 3px solid #3AA3E5;
-    outline: 2.5px solid #FCC32C;
-    outline-offset: -10px;
-    position: relative;
-    overflow: hidden;
-    margin-right: 70px;
-    
-}
+    background: rgba(255,255,255,0.18);       /* Fundo branco com 18% de opacidade */
+    padding: 22px 40px;                       /* Espaçamento interno: 22px vertical, 40px horizontal */
+    display: flex;                            /* Layout flexível para organizar elementos */
+    align-items: center;                      /* Alinha elementos verticalmente no centro */
+    border-radius: 28px;                      /* Cantos arredondados */
+    box-shadow: 0 8px 32px 0 rgba(58,163,229,0.18), 0 2px 8px 0 rgba(252,195,44,0.10); /* Sombras duplas */
+    height: 120px;                            /* Altura fixa do header */
+    margin: 5px;                              /* Margem externa */
+    backdrop-filter: blur(12px) saturate(140%); /* Efeito de desfoque no fundo */
+    border: 3px solid #3AA3E5;                /* Borda azul */
+    outline: 2.5px solid #FCC32C;             /* Contorno amarelo */
+    outline-offset: -10px;                    /* Contorno interno */
+    position: relative;                       /* Permite posicionamento de pseudo-elementos */
+    overflow: hidden;                         /* Esconde conteúdo que excede os limites */
+    margin-right: 38px;                       /* Margem direita específica */
+    margin-left: 38px;                        /* Margem esquerda específica */
+  }
 
+/* 
+ * FUNÇÃO: Pseudo-elemento decorativo do navbar
+ * PROPÓSITO: Adiciona um gradiente sutil de fundo com as cores do autismo
+ * CARACTERÍSTICAS: Gradiente das 4 cores, baixa opacidade, não interfere na interação
+ */
 .navbar::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 28px;
-    background: linear-gradient(90deg, #FCC32C 0%, #47BF59 25%, #FC4446 60%, #3AA3E5 100%);
-    opacity: 0.13;
-    z-index: 0;
-    pointer-events: none;
+    content: '';                              /* Conteúdo vazio (obrigatório para pseudo-elementos) */
+    position: absolute;                       /* Posicionamento absoluto dentro do navbar */
+    inset: 0;                                 /* Ocupa todo o espaço do navbar */
+    border-radius: 28px;                      /* Mesma curvatura do navbar */
+    background: linear-gradient(90deg, #FCC32C 0%, #47BF59 25%, #FC4446 60%, #3AA3E5 100%); /* Gradiente das cores do autismo */
+    opacity: 0.13;                           /* Opacidade baixa para não interferir na leitura */
+    z-index: 0;                               /* Fica atrás dos outros elementos */
+    pointer-events: none;                     /* Não interfere na interação do usuário */
 }
 
+/* 
+ * FUNÇÃO: Estilização do logo
+ * PROPÓSITO: Define tamanho, posicionamento e efeitos visuais do logo
+ * CARACTERÍSTICAS: Altura responsiva, sombra, bordas arredondadas
+ */
 .logo {
-    height: 180px;
-    margin-right: 32px;
-    margin-top: -18px; /* ajuste este valor conforme desejar */
-    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18));
-    border-radius: 16px;
-    padding: 0px;
-    z-index: 1;
+    height: 180px;                            /* Altura do logo */
+    margin-right: 32px;                       /* Espaço à direita do logo */
+    margin-top: -18px;                        /* Ajuste vertical (move para cima) */
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); /* Sombra projetada */
+    border-radius: 16px;                      /* Cantos arredondados */
+    padding: 0px;                             /* Sem padding interno */
+    z-index: 1;                               /* Fica acima do pseudo-elemento */
 }
 
+/* 
+ * FUNÇÃO: Container dos links de navegação
+ * PROPÓSITO: Organiza os links do menu em linha horizontal
+ * CARACTERÍSTICAS: Layout flex, espaçamento entre links, alinhamento central
+ */
 .nav-links {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    z-index: 1;
+    display: flex;                            /* Layout flexível */
+    gap: 28px;                                /* Espaço entre cada link */
+    align-items: center;                      /* Alinhamento vertical central */
+    z-index: 1;                               /* Fica acima do pseudo-elemento */
 }
 
+/* 
+ * FUNÇÃO: Estilização base dos links de navegação
+ * PROPÓSITO: Define aparência, fonte e comportamento dos links do menu
+ * CARACTERÍSTICAS: Tipografia, espaçamento, transições suaves
+ */
 .navbar a {
-    /* Remova o branco */
-    /* color: #fff; */
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.12rem;
-    letter-spacing: 1.1px;
-    position: relative;
-    padding: 8px 0 8px 0; /* Reduza o padding à esquerda */
-    display: flex;
-    align-items: center;
-    gap: 7px; /* Espaço entre ícone e texto */
-    transition: color 0.3s, text-shadow 0.3s;
-    z-index: 1;
-    overflow: hidden;
+    text-decoration: none;                    /* Remove sublinhado padrão */
+    font-weight: 700;                         /* Fonte em negrito */
+    font-size: 1.12rem;                       /* Tamanho da fonte */
+    letter-spacing: 1.1px;                    /* Espaçamento entre letras */
+    position: relative;                       /* Permite pseudo-elementos */
+    padding: 8px 0 8px 0;                     /* Espaçamento interno */
+    display: flex;                            /* Layout flex para ícone + texto */
+    align-items: center;                      /* Alinhamento vertical */
+    gap: 7px;                                 /* Espaço entre ícone e texto */
+    transition: color 0.3s, text-shadow 0.3s; /* Transições suaves */
+    z-index: 1;                               /* Camada superior */
+    overflow: hidden;                         /* Esconde overflow */
 }
 
-/* Ajuste o alinhamento do ícone do quebra-cabeça */
+/* 
+ * FUNÇÃO: Estilização dos ícones nos links
+ * PROPÓSITO: Ajusta tamanho e alinhamento dos ícones Font Awesome
+ * CARACTERÍSTICAS: Tamanho específico, alinhamento vertical, margem
+ */
 .nav-links a i {
-    font-size: 1.15em;
-    vertical-align: middle;
-    margin-right: 4px;
+    font-size: 1.15em;                        /* Tamanho do ícone */
+    vertical-align: middle;                   /* Alinhamento vertical */
+    margin-right: 4px;                        /* Espaço após o ícone */
 }
 
-/* Cores específicas para cada ícone */
-.nav-links a:nth-child(1) i { color: #FC4446; }
-.nav-links a:nth-child(2) i { color: #FCC32C; }
-.nav-links a:nth-child(3) i { color: #3AA3E5; }
-.nav-links a:nth-child(4) i { color: #47BF59; }
-.nav-links a:nth-child(5) i { color: #FC4446; }
-.nav-links a:nth-child(6) i { color: #FCC32C; }
+/* 
+ * FUNÇÃO: Cores específicas para cada ícone (1º ao 6º link)
+ * PROPÓSITO: Aplica cores diferentes do tema autismo para cada ícone
+ * CARACTERÍSTICAS: Cores alternadas seguindo a paleta do projeto
+ */
+.nav-links a:nth-child(1) i { color: #FC4446; } /* 1º ícone: vermelho */
+.nav-links a:nth-child(2) i { color: #FCC32C; } /* 2º ícone: amarelo */
+.nav-links a:nth-child(3) i { color: #3AA3E5; } /* 3º ícone: azul */
+.nav-links a:nth-child(4) i { color: #47BF59; } /* 4º ícone: verde */
+.nav-links a:nth-child(5) i { color: #FC4446; } /* 5º ícone: vermelho */
+.nav-links a:nth-child(6) i { color: #FCC32C; } /* 6º ícone: amarelo */
 
-
-/* Cores específicas para cada link do menu */
+/* 
+ * FUNÇÃO: Cores específicas para cada link de texto (1º ao 6º link)
+ * PROPÓSITO: Aplica cores diferentes do tema autismo para cada texto de link
+ * CARACTERÍSTICAS: Cores alternadas seguindo a paleta do projeto
+ */
 .nav-links a:nth-child(1) { color: #3AA3E5; }   /* Home - azul */
 .nav-links a:nth-child(2) { color: #FC4446; }   /* Espaços - vermelho */
 .nav-links a:nth-child(3) { color: #47BF59; }   /* Serviços - verde */
@@ -93,84 +128,116 @@ Cores do logo/autismo
 .nav-links a:nth-child(5) { color: #3AA3E5; }   /* Equipe - azul */
 .nav-links a:nth-child(6) { color: #FC4446; }   /* Fale conosco - vermelho */
 
-/* Efeito hover e sublinhado animado */
+/* 
+ * FUNÇÃO: Pseudo-elemento para sublinhado animado
+ * PROPÓSITO: Cria efeito de sublinhado que cresce no hover
+ * CARACTERÍSTICAS: Largura zero inicial, gradiente colorido, transição suave
+ */
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    width: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #FCC32C, #47BF59, #FC4446, #3AA3E5);
-    border-radius: 2px;
-    transition: width 0.4s cubic-bezier(.25,.8,.25,1);
-    z-index: 2;
+    content: '';                              /* Conteúdo vazio */
+    position: absolute;                       /* Posicionamento absoluto */
+    left: 0;                                  /* Alinhado à esquerda */
+    bottom: 2px;                              /* Posição inferior */
+    width: 0;                                 /* Largura inicial zero */
+    height: 4px;                              /* Altura do sublinhado */
+    background: linear-gradient(90deg, #FCC32C, #47BF59, #FC4446, #3AA3E5); /* Gradiente colorido */
+    border-radius: 2px;                       /* Cantos arredondados */
+    transition: width 0.4s cubic-bezier(.25,.8,.25,1); /* Transição suave personalizada */
+    z-index: 2;                               /* Acima do link */
 }
 
+/* 
+ * FUNÇÃO: Efeito hover dos links
+ * PROPÓSITO: Mudança visual quando usuário passa mouse sobre link
+ * CARACTERÍSTICAS: Cor branca, sombra colorida, efeito de destaque
+ */
 .nav-links a:hover {
-    color: #fff;
-    text-shadow: 0 2px 12px #3AA3E5, 0 1px 2px #FC4446;
+    color: #fff;                              /* Texto branco no hover */
+    text-shadow: 0 2px 12px #3AA3E5, 0 1px 2px #FC4446; /* Sombra azul e vermelha */
 }
 
+/* 
+ * FUNÇÃO: Expansão do sublinhado no hover
+ * PROPÓSITO: Faz o sublinhado crescer até 100% da largura
+ * CARACTERÍSTICAS: Largura total, ativado pelo hover
+ */
 .nav-links a:hover::after {
-    width: 100%;
+    width: 100%;                              /* Largura total no hover */
 }
 
+/* 
+ * FUNÇÃO: Cor específica do primeiro link (importante)
+ * PROPÓSITO: Força a cor azul no primeiro link (Home)
+ * CARACTERÍSTICAS: Usa !important para sobrescrever outras regras
+ */
 .nav-links > a:nth-child(1) {
-    color: #3AA3E5 !important;
+    color: #3AA3E5 !important;                /* Azul forçado para Home */
 }
 
-/* RESPONSIVIDADE HEADER */
+/* ================================
+   RESPONSIVIDADE HEADER
+   ================================ */
+
+/* 
+ * FUNÇÃO: Responsividade para tablets (até 900px)
+ * PROPÓSITO: Adapta o layout para telas médias
+ * CARACTERÍSTICAS: Layout vertical, logo centralizado, links em coluna
+ */
 @media (max-width: 900px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 4vw;
-    height: auto;
+    flex-direction: column;                   /* Elementos em coluna */
+    align-items: flex-start;                  /* Alinhamento à esquerda */
+    padding: 16px 4vw;                        /* Padding responsivo */
+    height: auto;                             /* Altura automática */
   }
 
   .logo {
-    height: 90px;
-    margin-right: 0;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    align-self: center;
+    height: 90px;                             /* Logo menor */
+    margin-right: 0;                          /* Remove margem direita */
+    margin-top: -10px;                        /* Ajuste vertical */
+    margin-bottom: 10px;                      /* Espaço abaixo do logo */
+    align-self: center;                       /* Centraliza o logo */
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    margin-left: 0;
-    align-items: flex-start;
+    flex-direction: column;                   /* Links em coluna */
+    gap: 12px;                                /* Espaço menor entre links */
+    width: 100%;                              /* Largura total */
+    margin-left: 0;                           /* Remove margem esquerda */
+    align-items: flex-start;                  /* Alinhamento à esquerda */
   }
 
   .nav-links a {
-    font-size: 1.04rem;
-    padding: 8px 0 8px 0;
-    gap: 7px;
+    font-size: 1.04rem;                       /* Fonte menor */
+    padding: 8px 0 8px 0;                     /* Padding ajustado */
+    gap: 7px;                                 /* Espaço entre ícone e texto */
   }
 }
 
+/* 
+ * FUNÇÃO: Responsividade para celulares (até 600px)
+ * PROPÓSITO: Adapta o layout para telas pequenas
+ * CARACTERÍSTICAS: Elementos menores, padding reduzido, bordas menores
+ */
 @media (max-width: 600px) {
   .navbar {
-    padding: 8px 2vw;
-    border-radius: 16px;
+    padding: 8px 2vw;                         /* Padding bem reduzido */
+    border-radius: 16px;                      /* Bordas menos arredondadas */
   }
 
   .logo {
-    height: 60px;
-    margin-top: -6px;
-    margin-bottom: 6px;
+    height: 60px;                             /* Logo bem menor */
+    margin-top: -6px;                         /* Ajuste vertical */
+    margin-bottom: 6px;                       /* Espaço reduzido */
   }
 
   .nav-links {
-    gap: 7px;
+    gap: 7px;                                 /* Espaço mínimo entre links */
   }
 
   .nav-links a {
-    font-size: 0.98rem;
-    padding: 7px 0 7px 0;
-    gap: 6px;
+    font-size: 0.98rem;                       /* Fonte menor */
+    padding: 7px 0 7px 0;                     /* Padding mínimo */
+    gap: 6px;                                 /* Espaço menor ícone/texto */
   }
 }

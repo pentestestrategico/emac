@@ -4,58 +4,62 @@
 
 /* Contêiner principal visível do carrossel */
 .carrocel-container {
-  width: 100%;                    /* Ocupa toda a largura disponível */
-  max-width: 1280px;              /* Novo limite máximo, mais largo */
-  margin: 5px 60px 0 10px;
+  width: 100%;
+  max-width: 1320px; /* Mesma largura do header */
+  margin: 5px auto 0 auto; /* CORRIGIDO: Centralizado igual ao header */
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 28px; /* Mesmo raio do header */
   background: linear-gradient(135deg, #bde0fe, #caffbf);
-  padding: 22px 60px;
+  padding: 22px 40px; /* Mesmo padding do header */
   position: relative;
   box-shadow:
     0 8px 32px 0 rgba(58, 163, 229, 0.18),
     0 2px 8px 0 rgba(252, 195, 44, 0.10),
     0 0 0 6px #FCC32C22;
+  backdrop-filter: blur(12px) saturate(140%);
+  border: 3px solid #3AA3E5;
+  outline: 2.5px solid #FCC32C;
+  outline-offset: -10px;
+  .carrocel-container {
+  /* ... seus estilos existentes ... */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45px, black calc(100% - 45px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 45px, black calc(100% - 45px), transparent 100%);
+}
+
 }
 
 /* Faixa horizontal que desliza as imagens */
 .carrocel-slide {
-  display: flex;                        /* Imagens lado a lado */
-  width: max-content;                  /* A largura se ajusta ao conteúdo total */
-  animation: scroll 20s linear infinite; /* Animação contínua da esquerda para a direita */
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
 }
 
 /* Estilo de cada imagem */
 .carrocel-slide img {
-  width: 200px;                         /* Largura padronizada */
-  height: 150px;                        /* Altura padronizada */
-  object-fit: cover;                    /* Preenche o espaço sem distorcer */
-  margin-right: 20px;                   /* Espaço entre imagens */
-  border-radius: 16px;                  /* Cantos arredondados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  transition: transform 0.5s ease;      /* Efeito suave ao dar zoom */
-  cursor: pointer;                      /* Cursor de mão para indicar que é clicável */
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+  cursor: pointer;
 }
 
 /* Zoom quando o usuário passa o mouse */
 .carrocel-slide img:hover {
-  transform: scale(1.05);               /* Ampliação leve da imagem */
+  transform: scale(1.05);
 }
 
 /* Animação que move as imagens da direita para a esquerda continuamente */
 @keyframes scroll {
   0% {
-    transform: translateX(0);           /* Posição inicial */
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);        /* Move metade da faixa (com duplicação) */
+    transform: translateX(-50%);
   }
-}
-
-/* Emojis decorativos abaixo do carrossel */
-.carrocel-container::before {
-  content: ""; /* Removido os emojis 💙💛💚💜 */
-  /* As demais propriedades podem ser removidas ou mantidas para compatibilidade */
 }
 
 /* ================================
@@ -64,37 +68,37 @@
 
 /* Fundo escuro com transparência quando modal estiver ativo */
 .modal-bg {
-  position: fixed;                     /* Cobre toda a tela */
+  position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(30, 30, 60, 0.85);  /* Cor escura com transparência */
-  display: flex;                       /* Flexbox para centralizar a imagem */
+  background: rgba(30, 30, 60, 0.85);
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;                       /* Sobrepõe todo o conteúdo */
+  z-index: 9999;
 }
 
 /* Imagem exibida ampliada no modal */
 .modal-img {
-  max-width: 90vw;                     /* Largura máxima responsiva */
-  max-height: 80vh;                    /* Altura máxima responsiva */
-  border-radius: 24px;                 /* Bordas arredondadas */
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 24px;
   box-shadow: 
-    0 8px 32px #3AA3E5,               /* Sombra azul */
-    0 2px 8px #FCC32C;                /* Sombra amarela */
-  background: #fff;                    /* Fundo branco */
-  padding: 12px;                       /* Espaço ao redor da imagem */
-  animation: zoomIn 0.4s cubic-bezier(.25,1.3,.5,1) both; /* Animação de entrada */
+    0 8px 32px #3AA3E5,
+    0 2px 8px #FCC32C;
+  background: #fff;
+  padding: 12px;
+  animation: zoomIn 0.4s cubic-bezier(.25,1.3,.5,1) both;
 }
 
 /* Animação de zoom ao aparecer a imagem */
 @keyframes zoomIn {
   0% {
     opacity: 0;
-    transform: scale(0.7) translateY(60px); /* Começa pequena e abaixo */
+    transform: scale(0.7) translateY(60px);
   }
   100% {
     opacity: 1;
-    transform: scale(1) translateY(0);      /* Fica em tamanho normal e centralizada */
+    transform: scale(1) translateY(0);
   }
 }
 
@@ -103,17 +107,58 @@
   position: absolute;
   top: 32px;
   right: 48px;
-  font-size: 2.5rem;                 /* Tamanho grande para o X */
-  color: #fff;                       /* Cor branca padrão */
+  font-size: 2.5rem;
+  color: #fff;
   background: none;
   border: none;
-  cursor: pointer;                   /* Mãozinha ao passar o mouse */
-  z-index: 10000;                    /* Acima da imagem */
+  cursor: pointer;
+  z-index: 10000;
   font-weight: bold;
-  transition: color 0.2s;            /* Transição suave de cor */
+  transition: color 0.2s;
 }
 
 /* Cor dourada ao passar o mouse no X */
 .modal-close:hover {
   color: #FCC32C;
+}
+
+/* RESPONSIVIDADE - IGUAL AO HEADER */
+@media (max-width: 900px) {
+  .carrocel-container {
+    padding: 16px 4vw; /* Mesmo padding do header */
+    border-radius: 24px;
+  }
+
+  .carrocel-slide img {
+    width: 160px;
+    height: 120px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carrocel-container {
+    padding: 8px 2vw; /* Mesmo padding do header */
+    border-radius: 16px;
+  }
+
+  .carrocel-slide img {
+    width: 120px;
+    height: 90px;
+    margin-right: 10px;
+  }
+
+  .modal-close {
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrocel-slide img {
+    width: 100px;
+    height: 75px;
+    margin-right: 8px;
+  }
 }
