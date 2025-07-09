@@ -12,23 +12,24 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Fundo translúcido, bordas arredondadas, sombras, gradientes
  */
 .navbar {
-    background: rgba(255,255,255,0.18);       /* Fundo branco com 18% de opacidade */
-    padding: 22px 40px;                       /* Espaçamento interno: 22px vertical, 40px horizontal */
-    display: flex;                            /* Layout flexível para organizar elementos */
-    align-items: center;                      /* Alinha elementos verticalmente no centro */
-    border-radius: 28px;                      /* Cantos arredondados */
-    box-shadow: 0 8px 32px 0 rgba(58,163,229,0.18), 0 2px 8px 0 rgba(252,195,44,0.10); /* Sombras duplas */
-    height: 120px;                            /* Altura fixa do header */
-    margin: 5px;                              /* Margem externa */
-    backdrop-filter: blur(12px) saturate(140%); /* Efeito de desfoque no fundo */
-    border: 3px solid #3AA3E5;                /* Borda azul */
-    outline: 2.5px solid #FCC32C;             /* Contorno amarelo */
-    outline-offset: -10px;                    /* Contorno interno */
-    position: relative;                       /* Permite posicionamento de pseudo-elementos */
-    overflow: hidden;                         /* Esconde conteúdo que excede os limites */
-    margin-right: 38px;                       /* Margem direita específica */
-    margin-left: 38px;                        /* Margem esquerda específica */
-  }
+    background: rgba(255,255,255,0.18);
+    padding: 22px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 28px;
+    box-shadow: 0 8px 32px 0 rgba(58,163,229,0.18), 0 2px 8px 0 rgba(252,195,44,0.10);
+    height: 120px;
+    margin: 5px;
+    backdrop-filter: blur(12px) saturate(140%);
+    border: 3px solid #3AA3E5;
+    outline: 2.5px solid #FCC32C;
+    outline-offset: -10px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 38px;
+    margin-left: 38px;
+}
 
 /* 
  * FUNÇÃO: Pseudo-elemento decorativo do navbar
@@ -36,14 +37,14 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Gradiente das 4 cores, baixa opacidade, não interfere na interação
  */
 .navbar::before {
-    content: '';                              /* Conteúdo vazio (obrigatório para pseudo-elementos) */
-    position: absolute;                       /* Posicionamento absoluto dentro do navbar */
-    inset: 0;                                 /* Ocupa todo o espaço do navbar */
-    border-radius: 28px;                      /* Mesma curvatura do navbar */
-    background: linear-gradient(90deg, #FCC32C 0%, #47BF59 25%, #FC4446 60%, #3AA3E5 100%); /* Gradiente das cores do autismo */
-    opacity: 0.13;                           /* Opacidade baixa para não interferir na leitura */
-    z-index: 0;                               /* Fica atrás dos outros elementos */
-    pointer-events: none;                     /* Não interfere na interação do usuário */
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    background: linear-gradient(90deg, #FCC32C 0%, #47BF59 25%, #FC4446 60%, #3AA3E5 100%);
+    opacity: 0.13;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* 
@@ -52,13 +53,13 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Altura responsiva, sombra, bordas arredondadas
  */
 .logo {
-    height: 180px;                            /* Altura do logo */
-    margin-right: 32px;                       /* Espaço à direita do logo */
-    margin-top: -18px;                        /* Ajuste vertical (move para cima) */
-    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); /* Sombra projetada */
-    border-radius: 16px;                      /* Cantos arredondados */
-    padding: 0px;                             /* Sem padding interno */
-    z-index: 1;                               /* Fica acima do pseudo-elemento */
+    height: 180px;
+    margin-right: 32px;
+    margin-top: -18px;
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18));
+    border-radius: 16px;
+    padding: 0px;
+    z-index: 1;
 }
 
 /* 
@@ -67,10 +68,10 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Layout flex, espaçamento entre links, alinhamento central
  */
 .nav-links {
-    display: flex;                            /* Layout flexível */
-    gap: 28px;                                /* Espaço entre cada link */
-    align-items: center;                      /* Alinhamento vertical central */
-    z-index: 1;                               /* Fica acima do pseudo-elemento */
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    z-index: 1;
 }
 
 /* 
@@ -79,18 +80,18 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Tipografia, espaçamento, transições suaves
  */
 .navbar a {
-    text-decoration: none;                    /* Remove sublinhado padrão */
-    font-weight: 700;                         /* Fonte em negrito */
-    font-size: 1.12rem;                       /* Tamanho da fonte */
-    letter-spacing: 1.1px;                    /* Espaçamento entre letras */
-    position: relative;                       /* Permite pseudo-elementos */
-    padding: 8px 0 8px 0;                     /* Espaçamento interno */
-    display: flex;                            /* Layout flex para ícone + texto */
-    align-items: center;                      /* Alinhamento vertical */
-    gap: 7px;                                 /* Espaço entre ícone e texto */
-    transition: color 0.3s, text-shadow 0.3s; /* Transições suaves */
-    z-index: 1;                               /* Camada superior */
-    overflow: hidden;                         /* Esconde overflow */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.12rem;
+    letter-spacing: 1.1px;
+    position: relative;
+    padding: 8px 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: color 0.3s, text-shadow 0.3s;
+    z-index: 1;
+    overflow: hidden;
 }
 
 /* 
@@ -99,34 +100,26 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Tamanho específico, alinhamento vertical, margem
  */
 .nav-links a i {
-    font-size: 1.15em;                        /* Tamanho do ícone */
-    vertical-align: middle;                   /* Alinhamento vertical */
-    margin-right: 4px;                        /* Espaço após o ícone */
+    font-size: 1.15em;
+    vertical-align: middle;
+    margin-right: 4px;
 }
 
-/* 
- * FUNÇÃO: Cores específicas para cada ícone (1º ao 6º link)
- * PROPÓSITO: Aplica cores diferentes do tema autismo para cada ícone
- * CARACTERÍSTICAS: Cores alternadas seguindo a paleta do projeto
- */
-.nav-links a:nth-child(1) i { color: #FC4446; } /* 1º ícone: vermelho */
-.nav-links a:nth-child(2) i { color: #FCC32C; } /* 2º ícone: amarelo */
-.nav-links a:nth-child(3) i { color: #3AA3E5; } /* 3º ícone: azul */
-.nav-links a:nth-child(4) i { color: #47BF59; } /* 4º ícone: verde */
-.nav-links a:nth-child(5) i { color: #FC4446; } /* 5º ícone: vermelho */
-.nav-links a:nth-child(6) i { color: #FCC32C; } /* 6º ícone: amarelo */
+/* Cores específicas para cada ícone */
+.nav-links a:nth-child(1) i { color: #FC4446; }
+.nav-links a:nth-child(2) i { color: #FCC32C; }
+.nav-links a:nth-child(3) i { color: #3AA3E5; }
+.nav-links a:nth-child(4) i { color: #47BF59; }
+.nav-links a:nth-child(5) i { color: #FC4446; }
+.nav-links a:nth-child(6) i { color: #FCC32C; }
 
-/* 
- * FUNÇÃO: Cores específicas para cada link de texto (1º ao 6º link)
- * PROPÓSITO: Aplica cores diferentes do tema autismo para cada texto de link
- * CARACTERÍSTICAS: Cores alternadas seguindo a paleta do projeto
- */
-.nav-links a:nth-child(1) { color: #3AA3E5; }   /* Home - azul */
-.nav-links a:nth-child(2) { color: #FC4446; }   /* Espaços - vermelho */
-.nav-links a:nth-child(3) { color: #47BF59; }   /* Serviços - verde */
-.nav-links a:nth-child(4) { color: #FCC32C; }   /* Sobre - amarelo */
-.nav-links a:nth-child(5) { color: #3AA3E5; }   /* Equipe - azul */
-.nav-links a:nth-child(6) { color: #FC4446; }   /* Fale conosco - vermelho */
+/* Cores específicas para cada link de texto */
+.nav-links a:nth-child(1) { color: #3AA3E5; }
+.nav-links a:nth-child(2) { color: #FC4446; }
+.nav-links a:nth-child(3) { color: #47BF59; }
+.nav-links a:nth-child(4) { color: #FCC32C; }
+.nav-links a:nth-child(5) { color: #3AA3E5; }
+.nav-links a:nth-child(6) { color: #FC4446; }
 
 /* 
  * FUNÇÃO: Pseudo-elemento para sublinhado animado
@@ -134,16 +127,16 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Largura zero inicial, gradiente colorido, transição suave
  */
 .nav-links a::after {
-    content: '';                              /* Conteúdo vazio */
-    position: absolute;                       /* Posicionamento absoluto */
-    left: 0;                                  /* Alinhado à esquerda */
-    bottom: 2px;                              /* Posição inferior */
-    width: 0;                                 /* Largura inicial zero */
-    height: 4px;                              /* Altura do sublinhado */
-    background: linear-gradient(90deg, #FCC32C, #47BF59, #FC4446, #3AA3E5); /* Gradiente colorido */
-    border-radius: 2px;                       /* Cantos arredondados */
-    transition: width 0.4s cubic-bezier(.25,.8,.25,1); /* Transição suave personalizada */
-    z-index: 2;                               /* Acima do link */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FCC32C, #47BF59, #FC4446, #3AA3E5);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(.25,.8,.25,1);
+    z-index: 2;
 }
 
 /* 
@@ -152,8 +145,8 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Cor branca, sombra colorida, efeito de destaque
  */
 .nav-links a:hover {
-    color: #fff;                              /* Texto branco no hover */
-    text-shadow: 0 2px 12px #3AA3E5, 0 1px 2px #FC4446; /* Sombra azul e vermelha */
+    color: #fff;
+    text-shadow: 0 2px 12px #3AA3E5, 0 1px 2px #FC4446;
 }
 
 /* 
@@ -162,20 +155,11 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Largura total, ativado pelo hover
  */
 .nav-links a:hover::after {
-    width: 100%;                              /* Largura total no hover */
-}
-
-/* 
- * FUNÇÃO: Cor específica do primeiro link (importante)
- * PROPÓSITO: Força a cor azul no primeiro link (Home)
- * CARACTERÍSTICAS: Usa !important para sobrescrever outras regras
- */
-.nav-links > a:nth-child(1) {
-    color: #3AA3E5 !important;                /* Azul forçado para Home */
+    width: 100%;
 }
 
 /* ================================
-   RESPONSIVIDADE HEADER
+   RESPONSIVIDADE - MENU NORMAL
    ================================ */
 
 /* 
@@ -184,60 +168,113 @@ Cores do logo/autismo
  * CARACTERÍSTICAS: Layout vertical, logo centralizado, links em coluna
  */
 @media (max-width: 900px) {
-  .navbar {
-    flex-direction: column;                   /* Elementos em coluna */
-    align-items: flex-start;                  /* Alinhamento à esquerda */
-    padding: 16px 4vw;                        /* Padding responsivo */
-    height: auto;                             /* Altura automática */
-  }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 4vw;
+        height: auto;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
 
-  .logo {
-    height: 90px;                             /* Logo menor */
-    margin-right: 0;                          /* Remove margem direita */
-    margin-top: -10px;                        /* Ajuste vertical */
-    margin-bottom: 10px;                      /* Espaço abaixo do logo */
-    align-self: center;                       /* Centraliza o logo */
-  }
+    .logo {
+        height: 90px;
+        margin-right: 0;
+        margin-top: -10px;
+        margin-bottom: 15px;
+    }
 
-  .nav-links {
-    flex-direction: column;                   /* Links em coluna */
-    gap: 12px;                                /* Espaço menor entre links */
-    width: 100%;                              /* Largura total */
-    margin-left: 0;                           /* Remove margem esquerda */
-    align-items: flex-start;                  /* Alinhamento à esquerda */
-  }
+    .nav-links {
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        align-items: center;
+    }
 
-  .nav-links a {
-    font-size: 1.04rem;                       /* Fonte menor */
-    padding: 8px 0 8px 0;                     /* Padding ajustado */
-    gap: 7px;                                 /* Espaço entre ícone e texto */
-  }
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 12px 0;
+        width: auto;
+        text-align: center;
+    }
 }
 
 /* 
  * FUNÇÃO: Responsividade para celulares (até 600px)
- * PROPÓSITO: Adapta o layout para telas pequenas
- * CARACTERÍSTICAS: Elementos menores, padding reduzido, bordas menores
+ * PROPÓSITO: Otimiza o layout para telas pequenas
+ * CARACTERÍSTICAS: Elementos menores, padding reduzido
  */
 @media (max-width: 600px) {
-  .navbar {
-    padding: 8px 2vw;                         /* Padding bem reduzido */
-    border-radius: 16px;                      /* Bordas menos arredondadas */
-  }
+    .navbar {
+        padding: 12px 3vw;
+        border-radius: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 
-  .logo {
-    height: 60px;                             /* Logo bem menor */
-    margin-top: -6px;                         /* Ajuste vertical */
-    margin-bottom: 6px;                       /* Espaço reduzido */
-  }
+    .logo {
+        height: 70px;
+        margin-top: -8px;
+        margin-bottom: 12px;
+    }
 
-  .nav-links {
-    gap: 7px;                                 /* Espaço mínimo entre links */
-  }
+    .nav-links {
+        gap: 12px;
+    }
 
-  .nav-links a {
-    font-size: 0.98rem;                       /* Fonte menor */
-    padding: 7px 0 7px 0;                     /* Padding mínimo */
-    gap: 6px;                                 /* Espaço menor ícone/texto */
-  }
+    .nav-links a {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}
+
+/* 
+ * FUNÇÃO: Responsividade para telas muito pequenas (até 480px)
+ * PROPÓSITO: Máxima otimização para dispositivos pequenos
+ * CARACTERÍSTICAS: Tamanhos mínimos, espaçamento reduzido
+ */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 2vw;
+        border-radius: 16px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .logo {
+        height: 60px;
+        margin-top: -6px;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 8px 0;
+    }
+
+    .nav-links a i {
+        font-size: 1em;
+    }
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Overlay escuro quando menu está aberto */
+.nav-links.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 15%;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
 }

@@ -1,11 +1,24 @@
 <nav class="navbar">
     <img src="/assets/3.png" alt="Logo" class="logo" />
+    
     <div class="nav-links">
-        <a routerLink="/" routerLinkActive="active"><i class="fas fa-puzzle-piece"></i> Home</a>
-        <a routerLink="espaco" routerLinkActive="active"><i class="fas fa-puzzle-piece"></i> Espaços</a>
-        <a routerLink="servicos" routerLinkActive="active"><i class="fas fa-puzzle-piece"></i> Serviços</a>
-        <a routerLink="sobre" routerLinkActive="active"><i class="fas fa-puzzle-piece"></i> Sobre</a>
-        <a routerLink="endereco" routerLinkActive="active"><i class="fas fa-puzzle-piece"></i> Endereço</a>
-        <a routerLink="contato" routerLinkActive="active"><i class="fas fa-puzzle-piece"></i> Fale Conosco</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a routerLink="/espaco" routerLinkActive="active">
+            <i class="fas fa-building"></i> Espaços
+        </a>
+        <a routerLink="/servicos" routerLinkActive="active">
+            <i class="fas fa-cogs"></i> Serviços
+        </a>
+        <a routerLink="/sobre" routerLinkActive="active">
+            <i class="fas fa-info-circle"></i> Sobre
+        </a>
+        <a routerLink="/endereco" routerLinkActive="active">
+            <i class="fas fa-map-marker-alt"></i> Endereço
+        </a>
+        <a routerLink="/contato" routerLinkActive="active">
+            <i class="fas fa-phone"></i> Fale Conosco
+        </a>
     </div>
 </nav>
