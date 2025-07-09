@@ -13,13 +13,15 @@ Cores do logo/autismo
     border-radius: 28px;
     box-shadow: 0 8px 32px 0 rgba(58,163,229,0.18), 0 2px 8px 0 rgba(252,195,44,0.10);
     height: 120px;
-    margin: 0; /* margem superior zero */
+    margin: 5px; /* margem superior zero */
     backdrop-filter: blur(12px) saturate(140%);
     border: 3px solid #3AA3E5;
     outline: 2.5px solid #FCC32C;
     outline-offset: -10px;
     position: relative;
     overflow: hidden;
+    margin-right: 70px;
+    
 }
 
 .navbar::before {
@@ -47,7 +49,6 @@ Cores do logo/autismo
     display: flex;
     gap: 28px;
     align-items: center;
-    margin-left: auto;
     z-index: 1;
 }
 
