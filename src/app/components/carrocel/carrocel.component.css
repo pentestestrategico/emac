@@ -1,63 +1,145 @@
 /* ================================
-   ESTILOS DO CARROSSEL
+   ESTILOS DO CARROSSEL - COMPATÍVEL COM TODOS OS NAVEGADORES
    ================================ */
 
 /* Contêiner principal visível do carrossel */
 .carrocel-container {
   width: 100%;
-  max-width: 1320px; /* Mesma largura do header */
-  margin: 5px auto 0 auto; /* CORRIGIDO: Centralizado igual ao header */
+  max-width: 1200px;
+  margin: 5px auto 0 auto;
   overflow: hidden;
-  border-radius: 28px; /* Mesmo raio do header */
-  background: linear-gradient(135deg, #bde0fe, #caffbf);
-  padding: 22px 40px; /* Mesmo padding do header */
+  border-radius: 28px;
+  background: -webkit-linear-gradient(135deg, #bde0fe, #caffbf); /* Safari/Chrome */
+  background: -moz-linear-gradient(135deg, #bde0fe, #caffbf);    /* Firefox */
+  background: linear-gradient(135deg, #bde0fe, #caffbf);         /* Padrão */
+  padding: 22px 40px;
   position: relative;
+  -webkit-box-shadow:
+    0 8px 32px 0 rgba(58, 163, 229, 0.18),
+    0 2px 8px 0 rgba(252, 195, 44, 0.10),
+    0 0 0 6px #FCC32C22;
+  -moz-box-shadow:
+    0 8px 32px 0 rgba(58, 163, 229, 0.18),
+    0 2px 8px 0 rgba(252, 195, 44, 0.10),
+    0 0 0 6px #FCC32C22;
   box-shadow:
     0 8px 32px 0 rgba(58, 163, 229, 0.18),
     0 2px 8px 0 rgba(252, 195, 44, 0.10),
     0 0 0 6px #FCC32C22;
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
   backdrop-filter: blur(12px) saturate(140%);
   border: 3px solid #3AA3E5;
   outline: 2.5px solid #FCC32C;
   outline-offset: -10px;
-  .carrocel-container {
-  /* ... seus estilos existentes ... */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45px, black calc(100% - 45px), transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 45px, black calc(100% - 45px), transparent 100%);
-}
-
+  /* Força o motor de renderização */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /* Faixa horizontal que desliza as imagens */
 .carrocel-slide {
-  display: flex;
+  display: -webkit-box;      /* Safari */
+  display: -webkit-flex;     /* Chrome */
+  display: -moz-box;         /* Firefox */
+  display: -ms-flexbox;      /* IE */
+  display: flex;             /* Padrão */
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
+  -webkit-animation: scroll 20s linear infinite;
+  -moz-animation: scroll 20s linear infinite;
+  -ms-animation: scroll 20s linear infinite;
   animation: scroll 20s linear infinite;
+  /* Força renderização por hardware */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform; /* Otimização moderna */
 }
 
 /* Estilo de cada imagem */
 .carrocel-slide img {
   width: 200px;
   height: 150px;
-  object-fit: cover;
+  -o-object-fit: cover;      /* Opera */
+  object-fit: cover;         /* Padrão */
   margin-right: 20px;
   border-radius: 16px;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  -ms-transition: -ms-transform 0.5s ease;
+  -o-transition: -o-transform 0.5s ease;
   transition: transform 0.5s ease;
   cursor: pointer;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  /* Anti-aliasing para imagens */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Zoom quando o usuário passa o mouse */
 .carrocel-slide img:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
   transform: scale(1.05);
 }
 
-/* Animação que move as imagens da direita para a esquerda continuamente */
-@keyframes scroll {
+/* Animação que move as imagens - com prefixos para todos os navegadores */
+@-webkit-keyframes scroll {
   0% {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   100% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@-moz-keyframes scroll {
+  0% {
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@-ms-keyframes scroll {
+  0% {
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
   }
 }
@@ -71,8 +153,20 @@
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(30, 30, 60, 0.85);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   z-index: 9999;
 }
@@ -82,22 +176,62 @@
   max-width: 90vw;
   max-height: 80vh;
   border-radius: 24px;
+  -webkit-box-shadow: 
+    0 8px 32px #3AA3E5,
+    0 2px 8px #FCC32C;
+  -moz-box-shadow: 
+    0 8px 32px #3AA3E5,
+    0 2px 8px #FCC32C;
   box-shadow: 
     0 8px 32px #3AA3E5,
     0 2px 8px #FCC32C;
   background: #fff;
   padding: 12px;
+  -webkit-animation: zoomIn 0.4s cubic-bezier(.25,1.3,.5,1) both;
+  -moz-animation: zoomIn 0.4s cubic-bezier(.25,1.3,.5,1) both;
   animation: zoomIn 0.4s cubic-bezier(.25,1.3,.5,1) both;
 }
 
-/* Animação de zoom ao aparecer a imagem */
-@keyframes zoomIn {
+/* Animação de zoom ao aparecer a imagem - com prefixos */
+@-webkit-keyframes zoomIn {
   0% {
     opacity: 0;
+    -webkit-transform: scale(0.7) translateY(60px);
     transform: scale(0.7) translateY(60px);
   }
   100% {
     opacity: 1;
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+  }
+}
+
+@-moz-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.7) translateY(60px);
+    transform: scale(0.7) translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.7) translateY(60px);
+    -moz-transform: scale(0.7) translateY(60px);
+    -ms-transform: scale(0.7) translateY(60px);
+    transform: scale(0.7) translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(0);
+    -moz-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
     transform: scale(1) translateY(0);
   }
 }
@@ -114,6 +248,10 @@
   cursor: pointer;
   z-index: 10000;
   font-weight: bold;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
   transition: color 0.2s;
 }
 
@@ -125,7 +263,7 @@
 /* RESPONSIVIDADE - IGUAL AO HEADER */
 @media (max-width: 900px) {
   .carrocel-container {
-    padding: 16px 4vw; /* Mesmo padding do header */
+    padding: 16px 4vw;
     border-radius: 24px;
   }
 
@@ -138,7 +276,7 @@
 
 @media (max-width: 600px) {
   .carrocel-container {
-    padding: 8px 2vw; /* Mesmo padding do header */
+    padding: 8px 2vw;
     border-radius: 16px;
   }
 
@@ -161,4 +299,11 @@
     height: 75px;
     margin-right: 8px;
   }
+}
+
+/* CSS Reset para garantir consistência entre navegadores */
+.carrocel-container * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }

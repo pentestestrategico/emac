@@ -1,0 +1,518 @@
+/*
+Cores do tema autismo
+#FCC32C (amarelo)
+#47BF59 (verde)
+#FC4446 (vermelho)
+#3AA3E5 (azul)
+*/
+
+/* 
+ * FUNÇÃO: Container principal da página sobre
+ * PROPÓSITO: Define layout, espaçamento e aparência geral
+ * CARACTERÍSTICAS: Padding responsivo, largura máxima, centralização
+ */
+.sobre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f8f9ff 0%, #fff5f8 100%);
+  min-height: 100vh;
+}
+
+/* 
+ * FUNÇÃO: Cabeçalho da página
+ * PROPÓSITO: Destaque visual para título principal e informações básicas
+ * CARACTERÍSTICAS: Fundo colorido, bordas arredondadas, sombras - TAMANHO REDUZIDO
+ */
+.header-info {
+  background: linear-gradient(135deg, #3AA3E5, #47BF59);
+  color: white;
+  padding: 16px 20px; /* Reduzido de 20px para 16px vertical */
+  border-radius: 20px; /* Reduzido de 24px para 20px */
+  margin-bottom: 24px; /* Reduzido de 40px para 24px */
+  box-shadow: 
+    0 6px 24px rgba(58, 163, 229, 0.25), /* Sombra reduzida */
+    0 2px 6px rgba(71, 191, 89, 0.15);   /* Sombra reduzida */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 
+ * FUNÇÃO: Efeito decorativo no cabeçalho
+ * PROPÓSITO: Adiciona textura visual sutil
+ * CARACTERÍSTICAS: Pseudo-elemento com gradiente sobreposto
+ */
+.header-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(252, 195, 44, 0.1) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+/* 
+ * FUNÇÃO: Título principal
+ * PROPÓSITO: Destaque máximo para o nome da instituição
+ * CARACTERÍSTICAS: Fonte reduzida, peso forte, sombra de texto
+ */
+.header-info h1 {
+  font-size: 1.8rem; /* Reduzido de 2.5rem para 1.8rem */
+  font-weight: 700;   /* Reduzido de 800 para 700 */
+  margin-bottom: 12px; /* Reduzido de 16px para 12px */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px; /* Reduzido de 1px para 0.5px */
+  position: relative;
+  z-index: 1;
+}
+
+/* 
+ * FUNÇÃO: Informações de contato no cabeçalho
+ * PROPÓSITO: Dados importantes em destaque - TAMANHO REDUZIDO
+ * CARACTERÍSTICAS: Fonte menor, espaçamento reduzido
+ */
+.header-info p {
+  font-size: 0.95rem; /* Reduzido de 1.1rem para 0.95rem */
+  margin: 4px 0; /* Reduzido de 8px para 4px */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduzido de 12px para 8px */
+  position: relative;
+  z-index: 1;
+}
+
+.header-info p strong {
+  color: #FCC32C;
+  font-weight: 700;
+}
+
+/* 
+ * FUNÇÃO: Seções principais do conteúdo
+ * PROPÓSITO: Organização visual clara de cada tópico
+ * CARACTERÍSTICAS: Fundo branco, bordas coloridas, sombras suaves
+ */
+.section {
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #3AA3E5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* 
+ * FUNÇÃO: Efeito hover nas seções
+ * PROPÓSITO: Interatividade sutil para melhor UX
+ * CARACTERÍSTICAS: Elevação e sombra aumentada
+ */
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 
+ * FUNÇÃO: Cores alternadas para bordas das seções
+ * PROPÓSITO: Variedade visual seguindo paleta do autismo
+ * CARACTERÍSTICAS: Rotação das 4 cores principais
+ */
+.section:nth-child(2) { border-left-color: #47BF59; }
+.section:nth-child(3) { border-left-color: #FC4446; }
+.section:nth-child(4) { border-left-color: #FCC32C; }
+.section:nth-child(5) { border-left-color: #3AA3E5; }
+.section:nth-child(6) { border-left-color: #47BF59; }
+
+/* 
+ * FUNÇÃO: Títulos das seções
+ * PROPÓSITO: Hierarquia visual clara
+ * CARACTERÍSTICAS: Cores vibrantes, tamanhos variados, espaçamento
+ */
+.section h2 {
+  color: #3AA3E5;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid rgba(58, 163, 229, 0.2);
+  position: relative;
+}
+
+.section h3 {
+  color: #47BF59;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 24px 0 16px 0;
+}
+
+.section h4 {
+  color: #FC4446;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 20px 0 12px 0;
+}
+
+/* 
+ * FUNÇÃO: Parágrafos do conteúdo
+ * PROPÓSITO: Legibilidade e espaçamento adequado
+ * CARACTERÍSTICAS: Altura de linha, margens, cor suave
+ */
+.section p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* 
+ * FUNÇÃO: Listas de objetivos e especificações
+ * PROPÓSITO: Organização visual de informações importantes
+ * CARACTERÍSTICAS: Marcadores coloridos, espaçamento, padding
+ */
+.objectives-list, .structure-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.objectives-list li, .structure-list li {
+  background: linear-gradient(90deg, rgba(58, 163, 229, 0.1), rgba(71, 191, 89, 0.1));
+  margin: 12px 0;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border-left: 4px solid #3AA3E5;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.objectives-list li:hover, .structure-list li:hover {
+  background: linear-gradient(90deg, rgba(58, 163, 229, 0.15), rgba(71, 191, 89, 0.15));
+  transform: translateX(8px);
+}
+
+/* Cores alternadas para items da lista */
+.objectives-list li:nth-child(2n) { border-left-color: #47BF59; }
+.objectives-list li:nth-child(3n) { border-left-color: #FC4446; }
+.objectives-list li:nth-child(4n) { border-left-color: #FCC32C; }
+
+.structure-list li:nth-child(2n) { border-left-color: #FCC32C; }
+.structure-list li:nth-child(3n) { border-left-color: #FC4446; }
+.structure-list li:nth-child(4n) { border-left-color: #47BF59; }
+
+/* 
+ * FUNÇÃO: Lista de especialidades (grid layout)
+ * PROPÓSITO: Apresentação organizada das especialidades em colunas
+ * CARACTERÍSTICAS: Grid responsivo, cards coloridos, hover effects
+ */
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.specialty-card {
+  background: linear-gradient(135deg, #fff, #f8f9ff);
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  border-left: 4px solid #3AA3E5;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.specialty-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 40%, rgba(58, 163, 229, 0.05) 50%, transparent 60%);
+  pointer-events: none;
+}
+
+.specialty-card:hover {
+  border-color: #3AA3E5;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(58, 163, 229, 0.2);
+  background: linear-gradient(135deg, #fff, #f0f7ff);
+}
+
+/* 
+ * FUNÇÃO: Cores alternadas para cards de especialidades
+ * PROPÓSITO: Variedade visual com as cores do autismo
+ * CARACTERÍSTICAS: Bordas e fundos com cores rotativas
+ */
+.specialty-card:nth-child(4n+1) { border-left-color: #3AA3E5; }
+.specialty-card:nth-child(4n+2) { border-left-color: #47BF59; }
+.specialty-card:nth-child(4n+3) { border-left-color: #FC4446; }
+.specialty-card:nth-child(4n+4) { border-left-color: #FCC32C; }
+
+/* 
+ * FUNÇÃO: Destaque para texto importante
+ * PROPÓSITO: Chamar atenção para informações chave
+ * CARACTERÍSTICAS: Fundo colorido, padding, bordas arredondadas
+ */
+.highlight {
+  background: linear-gradient(90deg, #FCC32C22, #47BF5922);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #FCC32C;
+  margin: 20px 0;
+  font-style: italic;
+  font-weight: 500;
+  position: relative;
+}
+
+.highlight::before {
+  content: '💡';
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  font-size: 1.5rem;
+}
+
+/* 
+ * FUNÇÃO: Seção de estatísticas/números importantes
+ * PROPÓSITO: Destaque visual para dados relevantes
+ * CARACTERÍSTICAS: Layout em cards, cores vibrantes, tipografia grande
+ */
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #3AA3E5, #47BF59);
+  color: white;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(58, 163, 229, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* ================================
+   RESPONSIVIDADE
+   ================================ */
+
+/* 
+ * FUNÇÃO: Responsividade para tablets (até 900px)
+ * PROPÓSITO: Adapta layout para telas médias
+ * CARACTERÍSTICAS: Padding reduzido, fontes menores
+ */
+@media (max-width: 900px) {
+  .sobre-container {
+    padding: 24px 16px;
+  }
+
+  .header-info {
+    padding: 14px 16px; /* Reduzido */
+  }
+
+  .header-info h1 {
+    font-size: 1.6rem; /* Reduzido de 2rem para 1.6rem */
+  }
+
+  .section {
+    padding: 24px;
+  }
+
+  .section h2 {
+    font-size: 1.7rem;
+  }
+
+  .specialties-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* 
+ * FUNÇÃO: Responsividade para celulares (até 600px)
+ * PROPÓSITO: Otimiza para telas pequenas
+ * CARACTERÍSTICAS: Layout em coluna única, espaçamentos mínimos
+ */
+@media (max-width: 600px) {
+  .sobre-container {
+    padding: 16px 12px;
+  }
+
+  .header-info {
+    padding: 12px 16px; /* Reduzido */
+  }
+
+  .header-info h1 {
+    font-size: 1.4rem; /* Reduzido de 1.8rem para 1.4rem */
+  }
+
+  .header-info p {
+    font-size: 0.9rem; /* Reduzido de 1rem para 0.9rem */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px; /* Reduzido de 4px para 2px */
+  }
+
+  .section {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.3rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .specialties-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .specialty-card {
+    padding: 16px;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* 
+ * FUNÇÃO: Responsividade para telas muito pequenas (até 480px)
+ * PROPÓSITO: Máxima otimização para dispositivos pequenos
+ * CARACTERÍSTICAS: Tamanhos mínimos, espaçamento reduzido
+ */
+@media (max-width: 480px) {
+  .sobre-container {
+    padding: 12px 8px;
+  }
+
+  .header-info {
+    padding: 10px 12px; /* Reduzido */
+  }
+
+  .header-info h1 {
+    font-size: 1.3rem; /* Reduzido de 1.6rem para 1.3rem */
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+
+  .objectives-list li, .structure-list li {
+    padding: 12px 16px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+/* 
+ * FUNÇÃO: Animações de entrada
+ * PROPÓSITO: Efeitos suaves ao carregar a página
+ * CARACTERÍSTICAS: Fade-in e slide-up progressivos
+ */
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.2s; }
+.section:nth-child(3) { animation-delay: 0.3s; }
+.section:nth-child(4) { animation-delay: 0.4s; }
+.section:nth-child(5) { animation-delay: 0.5s; }
+.section:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 
+ * FUNÇÃO: Elementos decorativos com as cores do autismo
+ * PROPÓSITO: Adicionar identidade visual temática
+ * CARACTERÍSTICAS: Símbolos e padrões relacionados ao autismo
+ */
+.autism-pattern {
+  position: relative;
+}
+
+.autism-pattern::after {
+  content: '🧩';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+/* 
+ * FUNÇÃO: Indicadores visuais para seções
+ * PROPÓSITO: Melhor navegação e organização visual
+ * CARACTERÍSTICAS: Números coloridos, posicionamento absoluto
+ */
+.section-number {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FCC32C, #FC4446);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
