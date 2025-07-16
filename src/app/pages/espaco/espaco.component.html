@@ -1,1 +1,38 @@
-<p>espaco works!</p>
+<div class="espaco-container">
+  <div class="header-section">
+    <h1>Nossos Espaços</h1>
+    <p>Conheça os ambientes especialmente projetados para acolher e cuidar com amor</p>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-grid">
+      <div 
+        class="photo-card" 
+        *ngFor="let photo of espacoPhotos; let i = index"
+        [style.animation-delay]="(i * 0.1) + 's'"
+        (click)="openModal(getImagePath(photo.filename), photo.title)"
+      >
+        <img 
+          [src]="getImagePath(photo.filename)" 
+          [alt]="photo.title" 
+          loading="lazy"
+        >
+        <div class="photo-overlay">
+          <h3>{{ photo.title }}</h3>
+          <p>{{ photo.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para visualizar imagem ampliada -->
+  <div class="modal-overlay" *ngIf="modalOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">&times;</button>
+      <img [src]="modalImage" [alt]="modalTitle" class="modal-img">
+      <div class="modal-info">
+        <h3>{{ modalTitle }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
