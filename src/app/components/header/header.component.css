@@ -401,11 +401,13 @@ Cores do logo/autismo
         flex-wrap: nowrap;
         margin-left: 0;
         transform: translateX(0);
+        pointer-events: none;
     }
 
     .nav-links.active {
         right: 0;
         transform: translateX(0);
+        pointer-events: all;
     }
 
     .nav-links a {
@@ -419,6 +421,10 @@ Cores do logo/autismo
         border: 2px solid transparent;
         transition: all 0.3s ease;
         color: #333;
+        pointer-events: all;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
     }
 
     .nav-links a:hover {
@@ -427,6 +433,12 @@ Cores do logo/autismo
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(58, 163, 229, 0.3);
         color: #3AA3E5;
+        pointer-events: all;
+    }
+
+    .nav-links a:active {
+        background: rgba(58, 163, 229, 0.4);
+        transform: translateY(0);
     }
 
     .menu-overlay {

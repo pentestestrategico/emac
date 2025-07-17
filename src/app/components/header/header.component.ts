@@ -26,7 +26,13 @@ export class HeaderComponent {
   }
 
   closeMenu() {
+    console.log('Fechando menu...'); // Debug
     this.isMenuOpen = false;
     this.renderer.removeClass(this.document.body, 'menu-open');
+  }
+
+  onLinkClick() {
+    console.log('Link clicado, fechando menu...'); // Debug
+    this.closeMenu();
   }
 }

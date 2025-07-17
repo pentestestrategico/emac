@@ -10,22 +10,22 @@
     </button>
     
     <div class="nav-links" [class.active]="isMenuOpen">
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onLinkClick()">
             <i class="fas fa-home"></i> Home
         </a>
-        <a routerLink="/espaco" routerLinkActive="active" (click)="closeMenu()">
+        <a routerLink="/espaco" routerLinkActive="active" (click)="onLinkClick()">
             <i class="fas fa-building"></i> Espaços
         </a>
-        <a routerLink="/servicos" routerLinkActive="active" (click)="closeMenu()">
+        <a routerLink="/servicos" routerLinkActive="active" (click)="onLinkClick()">
             <i class="fas fa-cogs"></i> Serviços
         </a>
-        <a routerLink="/sobre" routerLinkActive="active" (click)="closeMenu()">
+        <a routerLink="/sobre" routerLinkActive="active" (click)="onLinkClick()">
             <i class="fas fa-info-circle"></i> Sobre
         </a>
-        <a routerLink="/endereco" routerLinkActive="active" (click)="closeMenu()">
+        <a routerLink="/endereco" routerLinkActive="active" (click)="onLinkClick()">
             <i class="fas fa-map-marker-alt"></i> Endereço
         </a>
-        <a routerLink="/contato" routerLinkActive="active" (click)="closeMenu()">
+        <a routerLink="/contato" routerLinkActive="active" (click)="onLinkClick()">
             <i class="fas fa-phone"></i> Fale Conosco
         </a>
     </div>
