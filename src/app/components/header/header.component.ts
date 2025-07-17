@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Renderer2, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,5 +10,25 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule]
 })
 export class HeaderComponent {
-  // Código simplificado sem menu hambúrguer
+  isMenuOpen = false;
+
+  constructor(
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    
+    if (this.isMenuOpen) {
+      this.renderer.addClass(this.document.body, 'menu-open');
+    } else {
+      this.renderer.removeClass(this.document.body, 'menu-open');
+    }
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    this.renderer.removeClass(this.document.body, 'menu-open');
+  }
 }

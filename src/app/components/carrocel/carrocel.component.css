@@ -168,7 +168,7 @@
   -moz-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 8999;
 }
 
 /* Imagem exibida ampliada no modal */
@@ -246,7 +246,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 9000;
   font-weight: bold;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -260,10 +260,56 @@
   color: #FCC32C;
 }
 
-/* RESPONSIVIDADE - IGUAL AO HEADER */
-@media (max-width: 900px) {
+/* RESPONSIVIDADE APRIMORADA */
+
+/* Desktop grande */
+@media (min-width: 1400px) {
   .carrocel-container {
-    padding: 16px 4vw;
+    width: 90%;
+    padding: 28px 50px;
+  }
+  
+  .carrocel-slide img {
+    width: 220px;
+    height: 165px;
+    margin-right: 25px;
+  }
+}
+
+/* Desktop padrão */
+@media (max-width: 1399px) and (min-width: 1025px) {
+  .carrocel-container {
+    width: 85%;
+    padding: 22px 40px;
+  }
+  
+  .carrocel-slide img {
+    width: 200px;
+    height: 150px;
+    margin-right: 20px;
+  }
+}
+
+/* Tablet landscape */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .carrocel-container {
+    width: 90%;
+    padding: 20px 35px;
+    border-radius: 26px;
+  }
+
+  .carrocel-slide img {
+    width: 180px;
+    height: 135px;
+    margin-right: 18px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 900px) and (min-width: 769px) {
+  .carrocel-container {
+    width: 95%;
+    padding: 18px 30px;
     border-radius: 24px;
   }
 
@@ -274,16 +320,43 @@
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile landscape */
+@media (max-width: 768px) and (min-width: 601px) {
   .carrocel-container {
-    padding: 8px 2vw;
-    border-radius: 16px;
+    width: 98%;
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin: 3px auto 0 auto;
+  }
+
+  .carrocel-slide img {
+    width: 140px;
+    height: 105px;
+    margin-right: 12px;
+    border-radius: 12px;
+  }
+  
+  .modal-close {
+    top: 25px;
+    right: 35px;
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 600px) and (min-width: 481px) {
+  .carrocel-container {
+    width: 98%;
+    padding: 12px 20px;
+    border-radius: 18px;
+    margin: 2px auto 0 auto;
   }
 
   .carrocel-slide img {
     width: 120px;
     height: 90px;
     margin-right: 10px;
+    border-radius: 10px;
   }
 
   .modal-close {
@@ -291,13 +364,129 @@
     right: 30px;
     font-size: 2rem;
   }
+  
+  .modal-img {
+    max-width: 95vw;
+    max-height: 75vh;
+    border-radius: 16px;
+    padding: 8px;
+  }
 }
 
-@media (max-width: 480px) {
+/* Mobile pequeno */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carrocel-container {
+    width: 98%;
+    padding: 10px 15px;
+    border-radius: 16px;
+    margin: 1px auto 0 auto;
+  }
+
   .carrocel-slide img {
     width: 100px;
     height: 75px;
     margin-right: 8px;
+    border-radius: 8px;
+  }
+  
+  .modal-close {
+    top: 15px;
+    right: 25px;
+    font-size: 1.8rem;
+  }
+  
+  .modal-img {
+    max-width: 95vw;
+    max-height: 70vh;
+    border-radius: 12px;
+    padding: 6px;
+  }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 360px) {
+  .carrocel-container {
+    width: 98%;
+    padding: 8px 10px;
+    border-radius: 14px;
+    margin: 1px auto 0 auto;
+  }
+
+  .carrocel-slide img {
+    width: 80px;
+    height: 60px;
+    margin-right: 6px;
+    border-radius: 6px;
+  }
+  
+  .modal-close {
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .modal-img {
+    max-width: 95vw;
+    max-height: 65vh;
+    border-radius: 8px;
+    padding: 4px;
+  }
+}
+
+/* Modo paisagem para dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+  .carrocel-container {
+    padding: 8px 20px;
+    margin: 1px auto 0 auto;
+  }
+  
+  .carrocel-slide img {
+    width: 100px;
+    height: 75px;
+    margin-right: 8px;
+  }
+  
+  .modal-img {
+    max-height: 85vh;
+  }
+  
+  .modal-close {
+    top: 5px;
+    right: 15px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Animação pausada ao passar o mouse (apenas desktop) */
+@media (min-width: 1025px) {
+  .carrocel-container:hover .carrocel-slide {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+}
+
+/* Otimizações de performance para mobile */
+@media (max-width: 768px) {
+  .carrocel-slide {
+    -webkit-animation-duration: 25s; /* Mais lento em mobile */
+    -moz-animation-duration: 25s;
+    animation-duration: 25s;
+  }
+  
+  .carrocel-slide img {
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -moz-transition: -moz-transform 0.3s ease;
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Touch devices - remover hover effects */
+@media (hover: none) and (pointer: coarse) {
+  .carrocel-slide img:hover {
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
   }
 }
 

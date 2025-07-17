@@ -1,19 +1,30 @@
-/* Adicione no footer.component.css */
+/* Footer responsivo */
 .footer {
   width: 100%;
   background: linear-gradient(90deg, #3AA3E5 0%, #FCC32C 100%);
   color: #fff;
-  padding: 18px 0;
+  padding: clamp(15px, 3vw, 25px) 20px;
   text-align: center;
-  font-size: 1rem;
-  margin-top: 40px;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  margin-top: clamp(20px, 4vw, 40px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: clamp(6px, 1.5vw, 12px);
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-links a {
@@ -21,6 +32,92 @@
   text-decoration: underline;
   margin: 0 4px;
   font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+.instagram-link i {
+  font-size: 1.1em;
+}
+
+/* ================================
+   RESPONSIVIDADE DO FOOTER
+   ================================ */
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .footer {
+    padding: 20px 15px;
+  }
+  
+  .footer-content {
+    gap: 8px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 10px;
+    margin-top: 30px;
+  }
+  
+  .footer-content {
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .footer-content span {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .footer-links {
+    gap: 10px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .footer {
+    padding: 12px 8px;
+    margin-top: 20px;
+  }
+  
+  .footer-content {
+    gap: 8px;
+  }
+  
+  .footer-links {
+    gap: 8px;
+  }
+  
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 320px) {
+  .footer {
+    padding: 10px 5px;
+  }
+  
+  .footer-content {
+    font-size: 0.75rem;
+  }
+  
+  .footer-links a {
+    font-size: 0.8rem;
+    gap: 4px;
+  }
 }
 
 

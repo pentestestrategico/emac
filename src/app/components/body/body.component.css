@@ -171,44 +171,342 @@ body {
 }
 
 /* ======================================
-   📱 RESPONSIVIDADE (TELAS MENORES)
+   📱 RESPONSIVIDADE APRIMORADA
 ====================================== */
 
-/* Telas até 900px */
-@media (max-width: 900px) {
+/* Desktop grande */
+@media (min-width: 1400px) {
   .card-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 3rem;
+  }
+
+  .foto-card {
+    max-width: 280px;
+    min-height: 420px;
+    padding: 40px 16px 32px 16px;
+  }
+
+  .card-image {
+    width: 260px !important;
+    height: 180px !important;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-description {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop padrão */
+@media (max-width: 1399px) and (min-width: 1025px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    padding: 2.5rem;
+  }
+
+  .foto-card {
+    max-width: 260px;
+    min-height: 380px;
+    padding: 32px 12px 28px 12px;
+  }
+
+  .card-image {
+    width: 240px !important;
+    height: 160px !important;
+  }
+}
+
+/* Tablet landscape */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 2rem;
+  }
+
+  .foto-card {
+    max-width: 100%;
+    min-height: 350px;
+    padding: 28px 10px 24px 10px;
+  }
+
+  .card-image {
+    width: 220px !important;
+    height: 140px !important;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 900px) and (min-width: 769px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 1.8rem;
   }
 
   .foto-card {
     max-width: 100%;
     min-height: 320px;
-    padding: 22px 10px 18px 10px;
+    padding: 24px 10px 20px 10px;
   }
 
   .card-image {
     width: 200px !important;
     height: 120px !important;
   }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 1.05rem;
+  }
 }
 
-/* Telas até 600px */
-@media (max-width: 600px) {
+/* Mobile landscape */
+@media (max-width: 768px) and (min-width: 601px) {
   .card-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 1.5rem;
   }
 
   .foto-card {
-    min-height: 220px;
-    padding: 12px 4px 10px 4px;
+    max-width: 100%;
+    min-height: 280px;
+    padding: 20px 8px 16px 8px;
+    border-radius: 20px;
+  }
+
+  .card-image {
+    width: 180px !important;
+    height: 110px !important;
+    border-radius: 16px;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 600px) and (min-width: 481px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 1.2rem;
+  }
+
+  .foto-card {
+    max-width: 100%;
+    min-height: 260px;
+    padding: 18px 6px 14px 6px;
+    border-radius: 18px;
+  }
+
+  .card-image {
+    width: 160px !important;
+    height: 100px !important;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    width: 95%;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) and (min-width: 361px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 1rem;
+  }
+
+  .foto-card {
+    max-width: 100%;
+    min-height: 240px;
+    padding: 16px 4px 12px 4px;
+    border-radius: 16px;
   }
 
   .card-image {
     width: 140px !important;
+    height: 90px !important;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    width: 95%;
+  }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 360px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0.8rem;
+  }
+
+  .foto-card {
+    max-width: 100%;
+    min-height: 220px;
+    padding: 14px 2px 10px 2px;
+    border-radius: 14px;
+  }
+
+  .card-image {
+    width: 120px !important;
     height: 80px !important;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .card-description {
+    font-size: 0.85rem;
+    width: 98%;
+  }
+}
+
+/* Modo paisagem para dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 1rem;
+  }
+
+  .foto-card {
+    min-height: 200px;
+    padding: 12px 4px 8px 4px;
+  }
+
+  .card-image {
+    width: 120px !important;
+    height: 80px !important;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .card-description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Cards simples - responsividade */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.2rem 1.2rem 1.2rem 1.8rem;
+    border-radius: 14px;
+  }
+
+  .card::before {
+    width: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+
+  .card::before {
+    width: 6px;
+  }
+}
+
+/* Botões responsivos */
+@media (max-width: 768px) {
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+}
+
+/* Otimizações de performance para touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .foto-card:hover {
+    transform: none;
+    box-shadow: 0 4px 16px 0 rgba(58,163,229,0.10);
+    border-color: #3AA3E5;
+  }
+
+  .card:hover {
+    background-color: #grey;
+  }
+
+  .btn:hover {
+    background-color: #3AA3E5;
+  }
+}
+
+/* Animações reduzidas para dispositivos que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .foto-card {
+    transition: none;
+  }
+
+  .card::before {
+    animation: none;
+    background: #3AA3E5;
+  }
+
+  .btn {
+    transition: none;
   }
 }

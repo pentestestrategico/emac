@@ -1,0 +1,50 @@
+/* Estilos do componente principal */
+.main-content {
+  min-height: calc(100vh - 200px);
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+/* ================================
+   RESPONSIVIDADE DO APP
+   ================================ */
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .main-content {
+    padding: 30px 40px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .main-content {
+    padding: 25px 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 15px 20px;
+    min-height: calc(100vh - 150px);
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 10px 15px;
+    min-height: calc(100vh - 120px);
+  }
+}
+
+/* Modo paisagem mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-content {
+    min-height: calc(100vh - 100px);
+    padding: 10px 20px;
+  }
+}

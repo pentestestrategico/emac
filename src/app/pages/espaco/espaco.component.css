@@ -168,7 +168,7 @@ Cores do tema autismo
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 8000;
   padding: 20px;
   animation: fadeIn 0.3s ease;
 }
@@ -226,7 +226,7 @@ Cores do tema autismo
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  z-index: 1001;
+  z-index: 8001;
 }
 
 .modal-close:hover {
