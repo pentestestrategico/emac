@@ -266,7 +266,7 @@ Cores do tema autismo
 }
 
 .highlight::before {
-  content: '💡';
+ 
   position: absolute;
   top: -3px; /* Reduzido de -5px para -3px */
   right: 12px; /* Reduzido de 15px para 12px */
