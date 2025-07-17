@@ -1,4 +1,4 @@
-import { Component, Renderer2, Inject } from '@angular/core';
+import { Component, Renderer2, inject } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -11,11 +11,9 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-
-  constructor(
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+  
+  private renderer = inject(Renderer2);
+  private document = inject(DOCUMENT);
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

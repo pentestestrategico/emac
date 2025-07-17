@@ -2,7 +2,8 @@
     <img src="/assets/3.png" alt="Logo" class="logo" />
     
     <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
-    <button class="hamburger-menu" (click)="toggleMenu()" [class.active]="isMenuOpen">
+    <button class="hamburger-menu" (click)="toggleMenu()" (keyup.enter)="toggleMenu()" 
+            [class.active]="isMenuOpen" aria-label="Menu de navegação">
         <span></span>
         <span></span>
         <span></span>
@@ -30,5 +31,7 @@
     </div>
     
     <!-- Overlay para fechar o menu quando clicar fora -->
-    <div class="menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
+    <div class="menu-overlay" [class.active]="isMenuOpen" role="button" tabindex="0" 
+         (click)="closeMenu()" (keyup.enter)="closeMenu()" 
+         aria-label="Fechar menu"></div>
 </nav>

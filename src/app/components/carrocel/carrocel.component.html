@@ -1,25 +1,65 @@
 <div class="carrocel-container">
   <div class="carrocel-slide">
-    <img src="/assets/dentro1.jpeg" alt="dentro1" (click)="openModal('/assets/dentro1.jpeg')" />
-    <img src="/assets/dentro2.jpeg" alt="dentro2" (click)="openModal('/assets/dentro2.jpeg')" />
-    <img src="/assets/dentro3.jpeg" alt="dentro3" (click)="openModal('/assets/dentro3.jpeg')" />
-    <img src="/assets/dentro4.jpeg" alt="dentro4" (click)="openModal('/assets/dentro4.jpeg')" />
+    <img src="/assets/dentro1.jpeg" alt="dentro1" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro1.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro1.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro1.jpeg')" />
+    <img src="/assets/dentro2.jpeg" alt="dentro2" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro2.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro2.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro2.jpeg')" />
+    <img src="/assets/dentro3.jpeg" alt="dentro3" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro3.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro3.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro3.jpeg')" />
+    <img src="/assets/dentro4.jpeg" alt="dentro4" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro4.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro4.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro4.jpeg')" />
     <!-- Duplicadas para loop infinito -->
-    <img src="/assets/dentro1.jpeg" alt="dentro1" (click)="openModal('/assets/dentro1.jpeg')" />
-    <img src="/assets/dentro2.jpeg" alt="dentro2" (click)="openModal('/assets/dentro2.jpeg')" />
-    <img src="/assets/dentro3.jpeg" alt="dentro3" (click)="openModal('/assets/dentro3.jpeg')" />
-    <img src="/assets/dentro4.jpeg" alt="dentro4" (click)="openModal('/assets/dentro4.jpeg')" />
+    <img src="/assets/dentro1.jpeg" alt="dentro1" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro1.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro1.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro1.jpeg')" />
+    <img src="/assets/dentro2.jpeg" alt="dentro2" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro2.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro2.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro2.jpeg')" />
+    <img src="/assets/dentro3.jpeg" alt="dentro3" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro3.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro3.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro3.jpeg')" />
+    <img src="/assets/dentro4.jpeg" alt="dentro4" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro4.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro4.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro4.jpeg')" />
     <!-- Se ainda aparecer espaço, duplique mais uma vez -->
-    <img src="/assets/dentro1.jpeg" alt="dentro1" (click)="openModal('/assets/dentro1.jpeg')" />
-    <img src="/assets/dentro2.jpeg" alt="dentro2" (click)="openModal('/assets/dentro2.jpeg')" />
-    <img src="/assets/dentro3.jpeg" alt="dentro3" (click)="openModal('/assets/dentro3.jpeg')" />
-    <img src="/assets/dentro4.jpeg" alt="dentro4" (click)="openModal('/assets/dentro4.jpeg')" />
+    <img src="/assets/dentro1.jpeg" alt="dentro1" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro1.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro1.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro1.jpeg')" />
+    <img src="/assets/dentro2.jpeg" alt="dentro2" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro2.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro2.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro2.jpeg')" />
+    <img src="/assets/dentro3.jpeg" alt="dentro3" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro3.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro3.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro3.jpeg')" />
+    <img src="/assets/dentro4.jpeg" alt="dentro4" role="button" tabindex="0" 
+         (click)="openModal('/assets/dentro4.jpeg')" 
+         (keyup.enter)="openModal('/assets/dentro4.jpeg')" 
+         (keyup.space)="openModal('/assets/dentro4.jpeg')" />
   </div>
   
 </div>
 
 <!-- Modal para destaque -->
-<div class="modal-bg" *ngIf="modalImg" (click)="closeModal()">
-  <img class="modal-img" [src]="modalImg" alt="Imagem em destaque" (click)="$event.stopPropagation()" />
-  <button class="modal-close" (click)="closeModal()">×</button>
+<div class="modal-bg" *ngIf="modalImg" role="dialog" aria-modal="true" tabindex="0" 
+     (click)="closeModal()" (keyup.escape)="closeModal()">
+  <img class="modal-img" [src]="modalImg" alt="Imagem em destaque" tabindex="0"
+       (click)="$event.stopPropagation()" 
+       (keyup.enter)="$event.stopPropagation()" />
+  <button class="modal-close" (click)="closeModal()" 
+          (keyup.enter)="closeModal()" aria-label="Fechar modal">×</button>
 </div>

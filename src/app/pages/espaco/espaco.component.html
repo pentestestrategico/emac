@@ -10,7 +10,12 @@
         class="photo-card" 
         *ngFor="let photo of espacoPhotos; let i = index"
         [style.animation-delay]="(i * 0.1) + 's'"
+        role="button"
+        tabindex="0"
         (click)="openModal(getImagePath(photo.filename), photo.title)"
+        (keyup.enter)="openModal(getImagePath(photo.filename), photo.title)"
+        (keyup.space)="openModal(getImagePath(photo.filename), photo.title)"
+        [attr.aria-label]="'Ver imagem ampliada de ' + photo.title"
       >
         <img 
           [src]="getImagePath(photo.filename)" 
@@ -26,9 +31,12 @@
   </div>
 
   <!-- Modal para visualizar imagem ampliada -->
-  <div class="modal-overlay" *ngIf="modalOpen" (click)="closeModal()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <button class="modal-close" (click)="closeModal()">&times;</button>
+  <div class="modal-overlay" *ngIf="modalOpen" role="dialog" aria-modal="true" tabindex="0"
+       (click)="closeModal()" (keyup.escape)="closeModal()" aria-label="Fechar modal">
+    <div class="modal-content" tabindex="0" (click)="$event.stopPropagation()" 
+         (keyup.enter)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()" (keyup.enter)="closeModal()" 
+              aria-label="Fechar modal">&times;</button>
       <img [src]="modalImage" [alt]="modalTitle" class="modal-img">
       <div class="modal-info">
         <h3>{{ modalTitle }}</h3>
